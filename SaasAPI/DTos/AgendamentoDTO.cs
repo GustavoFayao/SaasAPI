@@ -15,6 +15,6 @@ namespace SaasAPI.DTos
         public string NomeBarbearia { get; set; } = string.Empty;
         public DateTime Inicio { get; set; }
         public DateTime Fim { get; set; }
-        public StatusAgendamento Status { get; set; } = StatusAgendamento.Confirmado;
+        public StatusAgendamento Status { get; set; } = StatusAgendamento.Agendado;
     }
 }

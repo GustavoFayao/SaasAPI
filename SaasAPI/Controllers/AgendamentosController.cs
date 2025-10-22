@@ -27,7 +27,7 @@ namespace SaasAPI.Controllers
                 .Where(a => a.BarbeariaId == barbeariaId)
                 .Include(a => a.Barbearia)
                 .Include(a => a.Cliente)
-                .Include(a => a.Servico)
+                .Include(a => a.Servicos)
                 .Include(a => a.Barbeiro)
                 .Select(a => new AgendamentoDTO
                 {
@@ -37,7 +37,7 @@ namespace SaasAPI.Controllers
                     BarbeiroId = a.BarbeiroId,
                     NomeCliente = a.Cliente.Nome,
                     NomeBarbeiro = a.Barbeiro.Nome,
-                    NomeServico = a.Servico.Nome,
+                    NomeServico = a.Servicos.Nome,
                     NomeBarbearia = a.Barbearia.Nome,
                     Inicio = a.Inicio,
                     Fim = a.Fim,
@@ -59,7 +59,7 @@ namespace SaasAPI.Controllers
             {
                 _logger.LogInformation("Iniciando criação de agendamento para barbearia {BarbeariaId}", barbeariaId);
 
-                bool barbeariaExiste = await _context.Barbearias.AnyAsync(b => b.Id == barbeariaId);
+                bool barbeariaExiste = await _context.Barbearia.AnyAsync(b => b.Id == barbeariaId);
                 if (!barbeariaExiste)
                     return NotFound($"Barbearia com ID {barbeariaId} não encontrada.");
 

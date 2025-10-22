@@ -10,10 +10,10 @@ namespace BarbeariaAPI.Data
 
         public BarbeariaContext(DbContextOptions<BarbeariaContext> options) : base(options) { }
 
-        public DbSet<Barbearia> Barbearias { get; set; }
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Barbeiro> Barbeiros { get; set; }
-        public DbSet<Servicos> Servicos { get; set; }
+        public DbSet<Barbearia> Barbearia { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Barbeiro> Barbeiro { get; set; }
+        public DbSet<Servico> Servico { get; set; }
         public DbSet<Agendamento> Agendamentos { get; set; }
 
 

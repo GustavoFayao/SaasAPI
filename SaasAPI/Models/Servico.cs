@@ -1,6 +1,6 @@
 ﻿namespace SaasAPI.Models
 {
-    public class Servicos
+    public class Servico
     {
         public Guid Id { get; set; }
         public Guid BarbeariaId { get; set; }
